@@ -2,38 +2,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>test</title>
+<title>02 test</title>
 </head>
 
 <body>
 
 
 <?php
+$ROOT = $_SERVER['DOCUMENT_ROOT'];
 
-for ($i = 0; $i < 5; $i++) {
-    echo $i.'<br>';
-}
+@ $fp = fopen("$ROOT/project/02/orders/orders1.txt", 'ab');
 
-echo '<br>--------------------------- <br> ';
+$str = '我们都是好孩子, 聪明善良的孩子';
 
-$result = true;
+fwrite($fp, $str, strlen($str));
 
-echo '$result:'.$result;
+echo 'file written';
 
-echo '<br>--------------------------- <br> ';
-
-
-
-$n = 20;
-
-
-echo gettype($n) .'<br>';
-
-settype($n, 'float');
-
-echo gettype($n);
-
-echo '<br><br>End';
 
 ?>
 
